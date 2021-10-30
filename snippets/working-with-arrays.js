@@ -1,8 +1,8 @@
 const sortListByDate = (list) => {
   return list
     .sort(function(a, b) {
-      var c = new Date(a.date);
-      var d = new Date(b.date);
+      let c = new Date(a.date);
+      let d = new Date(b.date);
       return d-c;
     })
     .map(valuation => valuation.date);

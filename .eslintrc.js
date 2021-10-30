@@ -12,6 +12,7 @@ module.exports = {
     'quotes': [ 'error', 'single' ],
     'semi': [ 'error', 'always' ],
     'no-trailing-spaces': [ 'error' ],
-    'no-unused-vars': [ 'warn' ]
+    'no-unused-vars': [ 'warn' ],
+    'no-var': [ 'error' ],
   }
 };

@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { nameNewPromise, namePromise } = require('./working-with-promises');
+const { nameNewPromise, namePromise, promise1, promise2 } = require('./working-with-promises');
 
 describe('working with promises', function () {
 
@@ -60,6 +60,16 @@ describe('working with promises', function () {
       await namePromise('error')
         .then(response => expect(response).to.equal('error'));
     });
+  });
+
+  it('should get promise confused', async function () {
+    await Promise.allSettled([
+      promise1(),
+      promise2()
+    ])
+      .then(results => {
+        results.forEach(result => expect(result.status).to.equal('fulfilled'));
+      });
   });
 
 });

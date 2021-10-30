@@ -10,5 +10,6 @@
   ],
   "timeout": 30000,
   "retries": 0,
-  "inline-diffs": true
+  "inline-diffs": true,
+  "watch-files": ["snippets/**/*.js"]
 }

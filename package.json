@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "lint": "eslint snippets",
-    "test": "mocha --config .mocharc.json snippets",
+    "test": "mocha --config .mocharc.json",
     "test-watch-file": "yarn test --watch ",
     "test-watch": "yarn test-watch-file 'snippets'",
     "watch-file": "yarn run nodemon"
