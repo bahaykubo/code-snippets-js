@@ -20,27 +20,34 @@ describe('working with promises', function () {
     });
 
     context('using all settled', function () {
+
+      const names = ['jim', 'bob', 'cam'];
+      const errorNames = ['jim', 'bob', 'error'];
+
       it('should fulfill all promises', async function () {
-        await Promise.allSettled([
-          nameNewPromise('jim'),
-          nameNewPromise('bob'),
-          nameNewPromise('cam')
-        ]).then(response => {
-          response.forEach(promise => {
-            expect(promise.status).to.equal('fulfilled');
+        await Promise.allSettled(names.map(name => nameNewPromise(name)))
+          .then(response => {
+            response.forEach(promise => {
+              expect(promise.status).to.equal('fulfilled');
+            });
           });
-        });
+      });
+
+      it('should iterate over async functions', async function () {
+        for (const name of names) {
+          await nameNewPromise(name)
+            .then(response => {
+              expect(response).to.contain('hello');
+            });
+        }
       });
 
       it('should have one promise rejected', async function () {
-        await Promise.allSettled([
-          nameNewPromise('jim'),
-          nameNewPromise('bob'),
-          nameNewPromise()
-        ]).then(response => {
-          const rejectedResponse = response.filter(promise => promise.status === 'rejected');
-          expect(rejectedResponse.length).to.equal(1);
-        });
+        await Promise.allSettled(errorNames.map(name => nameNewPromise(name)))
+          .then(response => {
+            const rejectedResponse = response.filter(promise => promise.status === 'rejected');
+            expect(rejectedResponse.length).to.equal(1);
+          });
       });
     });
   });
