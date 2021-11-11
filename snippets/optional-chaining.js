@@ -1,5 +1,5 @@
 const optionalChaining = () => {
-  let input = { description: null };
+  const input = { description: null };
   return ((input?.description) ? true : false);
 };
 

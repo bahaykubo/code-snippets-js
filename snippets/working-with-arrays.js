@@ -1,9 +1,9 @@
 const sortListByDate = (list) => {
   return list
     .sort(function(a, b) {
-      let c = new Date(a.date);
-      let d = new Date(b.date);
-      return d-c;
+      const c = new Date(a.date);
+      const d = new Date(b.date);
+      return d - c;
     })
     .map(valuation => valuation.date);
 };
@@ -28,7 +28,7 @@ const checkArray = (list) => {
 // checkArray();
 
 const modifyArray = (list) => {
-  let result = [];
+  const result = [];
   list.forEach( (item, index) => {
     result.push({index: index, name: item});
   });

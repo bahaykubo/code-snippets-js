@@ -1,0 +1,45 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": ["eslint:recommended", "plugin:mocha/recommended"],
+  "rules": {
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
+    "semi": "error",
+    "no-trailing-spaces": "error",
+    "no-var": "error",
+    "no-unused-vars": "warn",
+    "prefer-const": "error",
+    "no-tabs": "error",
+    "no-useless-concat": "error",
+    "prefer-template": "error",
+    "template-curly-spacing": "error",
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "never", "prev": "import", "next": "import" }
+    ]
+  }
+}
