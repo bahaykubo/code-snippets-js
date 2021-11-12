@@ -4,17 +4,31 @@
     "node": true,
     "mocha": true
   },
+  "extends": [
+    "eslint:recommended",
+    "plugin:mocha/recommended"
+  ],
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 2021
   },
-  "extends": ["eslint:recommended", "plugin:mocha/recommended"],
   "rules": {
-    "indent": ["error", 2, { "SwitchCase": 1 }],
-    "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
+    "indent": [
+      "error", 2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "quotes": [
+      "error", "single",
+      {
+        "avoidEscape": true
+      }
+    ],
     "semi": "error",
     "no-trailing-spaces": "error",
     "no-var": "error",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "error",
     "prefer-const": "error",
     "no-tabs": "error",
     "no-useless-concat": "error",
