@@ -54,6 +54,14 @@
     "padding-line-between-statements": [
       "error",
       { "blankLine": "never", "prev": "import", "next": "import" }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxBOF": 0,
+        "maxEOF": 1
+      }
     ]
   }
 }
