@@ -1,6 +1,6 @@
 const sortListByDate = (list) => {
   return list
-    .sort(function(a, b) {
+    .sort(function (a, b) {
       const c = new Date(a.date);
       const d = new Date(b.date);
       return d - c;
@@ -10,7 +10,7 @@ const sortListByDate = (list) => {
 
 const sortListByNumber = (list) => {
   return list
-    .sort(function(a, b) {
+    .sort(function (a, b) {
       return a.amount - b.amount;
     })
     .map(valuation => valuation.amount);
@@ -29,8 +29,8 @@ const checkArray = (list) => {
 
 const modifyArray = (list) => {
   const result = [];
-  list.forEach( (item, index) => {
-    result.push({index: index, name: item});
+  list.forEach((item, index) => {
+    result.push({ index: index, name: item });
   });
   return result;
 };

@@ -1,5 +1,4 @@
-
-const nameNewPromise = async (name) => {
+const nameNewPromise = (name) => {
   return new Promise((resolve, reject) => {
     if (!name || name === 'error') {
       setTimeout(() => reject('error'), 500);
@@ -9,7 +8,7 @@ const nameNewPromise = async (name) => {
   });
 };
 
-const namePromise = async (name) => {
+const namePromise = (name) => {
   if (!name || name === 'error') {
     return 'error';
   } else {
@@ -17,14 +16,14 @@ const namePromise = async (name) => {
   }
 };
 
-const promise1 = async () => {
+const promise1 = () => {
   let index = 0;
   return new Promise(resolve => {
     setTimeout(() => resolve(`var 1 ${++index} should be "2"`), 500);
   });
 };
 
-const promise2 = async () => {
+const promise2 = () => {
   let index = 0;
   return new Promise(resolve => {
     setTimeout(() => resolve(`var 2 ${++index} should be "2"`), 1000);

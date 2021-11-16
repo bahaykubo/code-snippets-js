@@ -18,6 +18,12 @@ const searchStateByIndexOf = (address) => {
   }
 };
 
+function doThis() {
+  console.log('this');
+}
+
+doThis();
+
 module.exports = {
   searchStateByStringSearch,
   searchStateByIndexOf
